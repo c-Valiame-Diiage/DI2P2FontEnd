@@ -1,0 +1,28 @@
+<p>evenement-creation works!</p>
+<ng-template>
+<form [formGroup]="createEventForm">
+	<div>
+		<label for="titre">Title :</label>
+		<input type="text" id="titre" name="titre" formControlName="titre" />
+	</div>
+	<div>
+		<label for="description">Description :</label>
+		<input type="text" id="description" name="description" formControlName="description" />
+	</div>
+	<div>
+		<label for="dateEvent">Date :</label>
+		<input type="text" id="dateEvent" name="dateEvent" formControlName="dateEvent" />
+	</div>
+	<div>
+		<label for="timeEvent">Time :</label>
+		<input type="text" id="timeEvent" name="timeEvent" formControlName="timeEvent" />
+	</div>
+	<div>
+		<label for="lieu">Location :</label>
+		<input type="text" id="lieu" name="lieu" formControlName="lieu" />
+	</div>
+	<div>
+		<button type="submit">Sign in</button>
+	</div>
+</form>
+</ng-template>

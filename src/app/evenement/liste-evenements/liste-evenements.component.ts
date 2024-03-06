@@ -1,5 +1,5 @@
 import { EvenementService } from './../../services/evenement/evenement.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Evenement } from '../../models/evenement';
 import { EvenementSearchUpDTO } from '../../services/DTO/evenement-search-up-dto';
 import { Router } from '@angular/router';
@@ -11,7 +11,7 @@ import { map } from 'rxjs';
   templateUrl: './liste-evenements.component.html',
   styleUrl: './liste-evenements.component.css',
 })
-export class ListeEvenementsComponent {
+export class ListeEvenementsComponent  implements OnInit{
   evenements: Evenement[] = [];
   searchEvenement: EvenementSearchUpDTO = {
     titre: '',
