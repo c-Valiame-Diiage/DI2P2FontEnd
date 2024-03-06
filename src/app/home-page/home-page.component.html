@@ -1,0 +1,13 @@
+<p>home-page works!</p>
+<button [routerLink]="['/evenements']">List of events</button>
+
+<h2>List of events</h2>
+<input type="text" placeholder="Search by title" />
+<div *ngFor="let evenement of evenements" style="background-color: lightsteelblue;">
+
+	<h3>{{ evenement.titre }}</h3>
+	<p>{{ evenement.description }}</p>
+	<p>{{ evenement.dateEvent }}</p>
+	<p>{{ evenement.timeEvent }}</p>
+	<p>{{ evenement.lieu }}</p>
+</div>

@@ -1,0 +1,15 @@
+<h2>List of events</h2>
+<input type="text" placeholder="Search by title" />
+<div style="display: flex; align-items: center; justify-content: space-between; background-color: lightsteelblue;">
+	
+	<div style="display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 1rem">
+        <div *ngFor="let evenement of evenements">
+            <h3>{{ evenement.titre }}</h3>
+			
+            <p>{{ evenement.description }}</p>
+            <p>{{ evenement.dateEvent }}</p>
+            <p>{{ evenement.timeEvent }}</p>
+            <p>{{ evenement.lieu }}</p>
+        </div>
+    </div>
+</div>

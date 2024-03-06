@@ -1,9 +1,10 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError } from 'rxjs';
 import { environment } from '../../../environments/environment.development';
 import { Evenement } from '../../models/evenement';
 import { EvenementUpDTO } from '../DTO/evenement-up-dto';
+import { EvenementSearchUpDTO } from '../DTO/evenement-search-up-dto';
 
 @Injectable({
   providedIn: 'root',
@@ -28,6 +29,11 @@ export class EvenementService {
   getEvenementById(id: number): Observable<Evenement> {
     const url = `${environment.apiUrl}${this.evenementsUrl}/${id}`;
     return this.http.get<Evenement>(url);
+  }
+  
+  /** Search evenements based on a search term */
+  searchEvenements(searchTerm: EvenementSearchUpDTO): Observable<Evenement[]> {
+    return this.http.post<Evenement[]>(`${environment.apiUrl}${this.evenementsUrl}/Searches`,searchTerm,this.httpOptions);
   }
 
   /** POST: add a new evenement to the server*/
